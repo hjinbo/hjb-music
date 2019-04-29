@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>音乐播放器</title>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="layui/layui.all.js"></script>
+        <script src="js/musicPlayer/request.js"></script>
+        <link rel="stylesheet" href="layui/css/layui.css" />
+        <link rel="stylesheet" href="music/css/animate.css" />
+        <link rel="stylesheet" href="css/musicPlayer/main.css" />
+        <link rel="stylesheet" href="css/musicPlayer/top.css" />
+        <link rel="stylesheet" href="css/musicPlayer/left.css" />
+        <link rel="stylesheet" href="css/musicPlayer/right.css" />
+        <link rel="stylesheet" href="css/musicPlayer/musicPlayer.css" />
+    </head>
+    <body>
+        <audio id="musicAudio" hidden="true" loop="loop"></audio>
+        <div class="playerBack">
+            <div class="mid">
+                <div class="left">
+                    <div class="personInfo"></div>
+                    <div class="collections"></div>
+                </div>
+                <div class="right">
+                    <div class="header">
+                        <div class="searchDiv">
+                            <input id="search" type="text" placeholder="请输入歌曲/歌手关键字"/>
+                        </div>
+                        <div class="searchBtn">搜索</div>
+                    </div>
+                    <div class="listHead">
+                        <span class="title">歌曲</span>
+                        <span class="author">歌手</span>
+                        <span class="album">专辑</span>
+                        <span class="time">时长</span>
+                    </div>
+                    <div class="list">
+                        <ul class="list-ul"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <!-- 进度条 -->
+                <div class="progress"></div>
+                <div class="musicInfo">
+
+                </div>
+                <!-- 功能按钮 -->
+                <div class="btnDiv">
+                    <div class="btn last">
+                        上一首
+                    </div>
+                    <div class="btn play">
+                        播放/暂停
+                    </div>
+                    <div class="btn next">
+                        下一首
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

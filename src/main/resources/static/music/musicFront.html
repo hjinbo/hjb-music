@@ -1,0 +1,456 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Secret</title>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="layui/layui.all.js"></script>
+        <!-- 统一身份验证 -->
+        <!-- <script src="js/common/validate.js"></script> -->
+        <script src="js/musicFront/slider.js"></script>
+        <!-- 请求数据 -->
+        <!--<script src="js/musicFront/requestLoad.js"></script>-->
+        <!--<script src="js/musicFront/requestPlay.js"></script>-->
+        <!-- 静态模拟数据 -->
+         <script src="js/musicFront/staticLoad.js"></script>
+         <script src="js/musicFront/staticPlay.js"></script>
+        <!-- 播放器 -->
+        <script src="js/player/player.js"></script>
+        <!-- 歌词 -->
+        <!--<script src="js/lyric/lyric.js"></script>-->
+        <script src="js/header/header.js"></script>
+        <link rel="stylesheet" href="layui/css/layui.css" />
+        <link rel="stylesheet" href="css/musicFront/style.css" />
+        <link rel="stylesheet" href="css/musicFront/index.css" />
+        <!-- 播放器 -->
+        <link rel="stylesheet" href="css/player/player.css" />
+        <!-- 歌词 -->
+        <link rel="stylesheet" href="css/lyric/lyric.css" />
+        <link rel="stylesheet" href="css/header/header.css" />
+        <link rel="shortcut icon" href="pic/img/music.ico" type="image/x-icon"/>
+    </head>
+    <body>
+        <audio id="musicAudio" hidden="hidden"></audio>
+        
+        <!-- 歌词 -->
+        <div class="musicLyric" style="display: none;">
+            <div class="lyricDivBack"></div>
+            <div class="lyricDiv">
+                <div class="stylus">这是唱针</div>
+                <div class="songPicOutter"></div>
+                <div class="songPic"></div>
+                <div class="right">
+                    <div class="songInfo">
+                        <div class="songName">盗将行</div>
+                        <div class="singerAndAlbum">
+                            <span class="tip">歌手:</span><div class="singer">花粥&马雨阳</div>
+                            <span class="tip">专辑:</span><div class="songAlbum">盗将行</div>
+                        </div>
+                        <div id="lyric"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 播放器 -->
+        <div class="musicPlayer">
+            <div class="playerDiv">
+                <div class="player">
+                    <!-- 歌曲图片 -->
+                    <div class="songPic">
+                        <div class="lrcShow">
+                            <span class="btn"></span>
+                        </div>
+                    </div>
+                    <div class="rightOther">
+                        <!-- 显示歌曲列表按钮 -->
+                        <div class="showPlayerList"></div>
+                        <!-- 歌曲操作器 -->
+                        <div class="songOperator">
+                            <div id="volume">
+                                <div id="silence"></div>
+                                <div id="maxVolume">
+                                    <div id="curVolume"></div>
+                                </div>
+                            </div>
+                            <div id="last"></div>
+                            <div id="start"></div>
+                            <div id="next"></div>
+                            <div id="end"></div>
+                            <div id="playType"></div>
+                        </div>
+                        <!-- 歌曲时间显示 -->
+                        <div class="songTime">
+                            <div id="curTime">00:00</div>
+                            <div id="songNameAndAuthor">secret</div>
+                            <div id="maxTime">09:07</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 进度条 -->
+                <div class="songProcess">
+                    <div class="curProcess"></div>
+                </div>
+                <div class="playerList"></div>
+            </div>
+            <div class="show">
+                <span></span>
+            </div>
+        </div>
+        <div class="notLyric">
+            <!-- 标头 -->
+            <div class="headerBack">
+                <div class="icon"></div>
+                <div class="searchDiv">
+                    <input type="text" id="searchText" placeholder="搜索歌曲、歌单" /> 
+                </div>
+                <div class="submit">搜索</div>
+                <div class="changeStyle"></div>
+            </div>
+            <!-- 轮播图 -->
+            <div class="htmleaf-container">
+                <div class="main_banner">
+                    <div class="main_banner_wrap">
+                        <div class="main_banner_box" id="m_box">
+                            <a href="javascript:void(0)" class="banner_btn js_pre">
+                                <span class="banner_btn_arrow"><i></i></span>
+                            </a>
+                            <a href="javascript:void(0)" class="banner_btn btn_next js_next">
+                                <span class="banner_btn_arrow"><i></i></span>
+                            </a>
+                            <ul>
+                                <li id="imgCard0">
+                                    <a><span style="opacity:0;"></span></a>     
+                                    <img src="pic/img/wind.jpg" alt="">
+                                    <p>夕阳下的秋千，是泛黄的童年</p>
+                                </li> 
+                                <li id="imgCard1">
+                                    <a><span style="opacity:0.4;"></span></a>      
+                                    <img src="pic/img/naruto_sea.png" alt="">
+                                    <p>可能是因为感受过那种伤痛，才会温柔的对待他人吧</p>
+                                </li> 
+                                <li id="imgCard2">
+                                    <a><span style="opacity:0.4;" ></span></a>        
+                                    <img src="pic/img/haer.png" alt="">
+                                    <p>你一直在等我，但是我却现在才来</p>
+                                </li> 
+                                <li id="imgCard3">
+                                    <a><span style="opacity:0.4;"></span></a>      
+                                    <img src="pic/img/sasori.png" alt="">
+                                    <p>没有完美的傀儡，没有完美的人类，却有绝美的离逝</p>
+                                </li> 
+                                <li id="imgCard4">
+                                    <a><span style="opacity:0.4;"></span></a>      
+                                    <img src="pic/img/itachi_sasuke.gif" alt="">
+                                    <p>原谅我，佐助，这是最后一次了</p>
+                                </li> 
+                            </ul>
+                            <!--火狐倒影图层-->
+                            <p id="rflt"></p>
+                            <!--火狐倒影图层-->
+                        </div>
+                        <!--序列号按钮-->
+                        <div class="btn_list">
+                            <span class="curr"></span><span></span><span></span><span></span><span></span>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新歌首发 -->
+            <div class="newSongsDiv">
+                <h1>新歌首发</h1>
+                <div class="more">更多</div>
+                <div class="newSongs">
+                    <div class="newSong" id="ns0">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns1">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns2">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns3">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns4">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns5">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns6">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                    <div class="newSong" id="ns7">
+                        <div class="content">
+                            <span class="titleAndAuthor">不能说的秘密-周杰伦</span>
+                            <span class="playIcon"></span>
+                            <span class="time">09:07</span>
+                            <span class="album">不能说的秘密</span>
+                            <span class="mid" style="display: none;">不能说的秘密</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="magic">
+                <!-- 热门歌单 -->
+                <div class="hotSongListsDiv">
+                    <span class="hotSongListsTitle">热门歌单<span class="more">更多</span></span>
+                    <div class="hotSongLists">
+                        <div class="hotSongList most">
+                            <div class="picBack">
+                                <div class="mostPic" id="sl0">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info mostInfo">The divine comedy as first love</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                        <div class="hotSongList">
+                            <div class="picBack">
+                                <div class="pic" id="sl1">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info">A new world</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                        <div class="hotSongList">
+                            <div class="picBack">
+                                <div class="pic" id="sl2">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info">This is our dream</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                        <div class="hotSongList">
+                            <div class="picBack">
+                                <div class="pic" id="sl3">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info">This is our dream</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                        <div class="hotSongList">
+                            <div class="picBack">
+                                <div class="pic" id="sl4">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info">A new world</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                        <div class="hotSongList">
+                            <div class="picBack">
+                                <div class="pic" id="sl5">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info">This is our dream</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                        <div class="hotSongList">
+                            <div class="picBack">
+                                <div class="pic" id="sl6">
+                                    <div class="content"></div>
+                                </div>
+                            </div>
+                            <div class="info">A new world</div>
+                            <div class="listId" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 心灵歌者 -->
+                <div class="authorListsDiv">
+                    <span class="authorListsTitle">心灵歌者<span class="more">更多</span></span>
+                    <div class="authorLists">
+                        <div class="author">
+                            <div class="authorPic" id="a0">
+                                <div class="content" style="display: none;"></div>
+                            </div>
+                            <div class="authorName">周杰伦</div>
+                        </div>
+                        <div class="author">
+                            <div class="authorPic" id="a1">
+                                <div class="content" style="display: none;"></div>
+                            </div>
+                            <div class="authorName">周杰伦</div>
+                        </div>
+                        <div class="author">
+                            <div class="authorPic" id="a2">
+                                <div class="content" style="display: none;"></div>
+                            </div>
+                            <div class="authorName">周杰伦</div>
+                        </div>
+                        <div class="author">
+                            <div class="authorPic" id="a3">
+                                <div class="content" style="display: none;"></div>
+                            </div>
+                            <div class="authorName">周杰伦</div>
+                        </div>
+                        <div class="author">
+                            <div class="authorPic" id="a4">
+                                <div class="content" style="display: none;"></div>
+                            </div>
+                            <div class="authorName">周杰伦</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 热门MV -->
+            <div class="hotMVListsDiv">
+                <h1>热门MV</h1>
+                <div class="more">更多</div>
+                <div class="hotMVLists">
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv0">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv1">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">蒲公英的约定</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv2">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv3">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv4">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv5">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv6">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                    <div class="hotMV">
+                        <div class="picBack">
+                            <div class="MVPic" id="mv7">
+                                <div class="content">
+                                    <video></video>
+                                    <span class="playIcon"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MVName">不能说的秘密</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 回到页头 -->
+            <div id="toTop"></div>
+            <hr />
+            <!-- 意见反馈 -->
+            <div class="suggestionDiv">
+                <div class="font">
+                    如果您在使用的时候出现任何漏洞或是不便的操作方式，甚至有任何改进的建议，请联系QQ邮箱: 821409523@qq.com
+                </div>
+                <div class="ipInfo">
+                    <!-- <iframe src="https://api.mlwei.com/ip.php" width="300px" height="120px"></iframe> -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

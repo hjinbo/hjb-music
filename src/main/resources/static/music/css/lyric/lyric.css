@@ -1,0 +1,215 @@
+.musicLyric {
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.lyricDivBack {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../pic/img/itachi_sasuke.gif") no-repeat center;
+    background-size: cover;
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter:blur(8px);
+}
+.lyricDiv {
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+}
+.lyricDiv .stylus {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 270px;
+    width: 200px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-align: right;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    transition: 300ms;
+}
+.lyricDiv .songPicOutter {
+    position: absolute;
+    z-index: 10;
+    width: 205px;
+    height: 205px;
+    background: url("../../pic/img/coverall.png") no-repeat -140px -580px;
+    top: 50px;
+    left: 250px;
+}
+.lyricDiv .songPic {
+    position: absolute;
+    z-index: 9;
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+    background: url("../../pic/img/itachi_sasuke.gif") no-repeat;
+    background-size: 100% 100%;
+    top: 80px;
+    left: 280px;
+}
+
+/* 唱片旋转(由于暂停会重置旋转的角度，不采用关键帧动画的方式，而用transition) */
+/* .lyricDiv .rotation {
+    -moz-animation: rotation 20s linear infinite;
+    -webkit-animation: rotation 20s linear infinite;
+    -o-animation: rotation 20s linear infinite;
+    animation: rotation 20s linear infinite;
+}
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(360deg);}
+}
+@-ms-keyframes rotation {
+    from {-ms-transform: rotate(0deg);}
+    to {-ms-transform: rotate(360deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+} */
+
+/* 以下部分为单页面测试样式 */
+.lyricDiv .songControls {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: skyblue;
+    top: 350px;
+    left: 280px;
+}
+.lyricDiv .songTime {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    top: 400px;
+    left: 280px;
+}
+/* 以上部分为单页面测试样式 */
+
+.lyricDiv .right {
+    position: absolute;
+    width: 800px;
+    height: 100%;
+    top: 0;
+    left: 500px;
+}
+.lyricDiv .right .songInfo {
+    width: 800px;
+    height: 100px;
+    margin: 30px auto;
+}
+.lyricDiv .right .songInfo .songName {
+    color: #fff;
+    font-size: x-large;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.lyricDiv .right .songInfo .tip {
+    display: block;
+    color: #afafaf;
+    float: left;
+    margin-left: 180px;
+}
+.lyricDiv .right .songInfo .singerAndAlbum .singer {
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+    color: #fff;
+}
+.lyricDiv .right .songInfo .singerAndAlbum .songAlbum {
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+    color: #fff;
+}
+.lyricDiv .right .songInfo #lyric {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    float: left;
+    margin-top: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+.lyricDiv .right .songInfo .lyricColor {
+    color: gold;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+}
+.lyricDiv .right .songInfo #lyric .line {
+    display: block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    -webkit-transition: 1s linear;
+    transition: 1s linear;
+}
+.lyricDiv .right .songInfo #lyric .time {
+    display: none;
+}
+/* 文件颜色渐变 */
+#lyric {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+    font-size: 20px;
+    font-family: poppin,Tahoma,Arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+    -webkit-mask-image: linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,.6) 15%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 75%,rgba(255,255,255,.6) 85%,rgba(255,255,255,0) 100%);
+    mask-image: linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,.6) 15%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 75%,rgba(255,255,255,.6) 85%,rgba(255,255,255,0) 100%);
+}
+
+/* 滚动条 */
+#lyric::-webkit-scrollbar {
+    width: 8px;
+    border-right: 1px solid #ccc;
+}
+#lyric::-webkit-scrollbar-track {
+    background-color: inherit;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius:2em;
+}
+#lyric::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #ccc;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius:2em;
+}
+#lyric::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}

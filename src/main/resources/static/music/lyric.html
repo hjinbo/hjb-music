@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/lyric/lyric.js"></script>
+        <link rel="stylesheet" href="css/lyric/lyric.css" />
+    </head>
+    <body>
+            <!-- http://www.ytmp3.cn/down/48303.mp3 -->
+            <audio id="musicAudio" src = "http://www.ytmp3.cn/down/48303.mp3" loop="loop"></audio>    
+        <!-- <audio id="musicAudio" src="https://dl.stream.qqmusic.qq.com/C400003aAYrm3GE0Ac.m4a?vkey=1EF3DBD42AFC38225C427FFA16343958ECC76676B0FD62303424F27BFE222EE1B1AA4F5AD8EF14E720F52082635A24A34E657F9582AC5718&guid=746301965&uin=0&fromtag=38" loop="loop"></audio> -->
+        <div class="musicLyric">
+            <div class="lyricDivBack"></div>
+            <div class="lyricDiv">
+                <div class="stylus"></div>
+                <div class="songPicOutter rotation"></div>
+                <div class="songPic rotation"></div>
+                <div class="songControls">播放/暂停</div>
+                <div class="songTime"></div>
+                <div class="right">
+                    <div class="songInfo">
+                        <div class="songName">盗将行</div>
+                        <div class="singerAndAlbum">
+                            <span class="tip">歌手:</span><div class="singer">花粥&马雨阳</div>
+                            <span class="tip">专辑:</span><div class="songAlbum">盗将行</div>
+                        </div>
+                        <div id="lyric"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

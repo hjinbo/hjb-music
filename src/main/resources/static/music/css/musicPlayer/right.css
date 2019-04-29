@@ -1,0 +1,58 @@
+.right {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+.listHead {
+    height: 30px;
+    line-height: 30px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.title {
+    width: 40%;
+    text-align: center;
+    float: left;
+}
+.author {
+    width: 15%;
+    text-align: center;
+    float: left;
+}
+.album {
+    width: 30%;
+    text-align: center;
+    float: left;
+}
+.time {
+    width: 15%;
+    text-align: center;
+    float: left;
+}
+.list {
+    height: 85%;
+    overflow: auto;
+}
+.list-ul .music-li {
+    height: 20px;
+    margin-top: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.music-li span span {
+    margin: 0 auto;
+}
+.list-ul .music-li:hover {
+    background-color: #e5e5e5;
+}
+.music-li span span:hover {
+    color: #0ec522;
+    cursor: pointer;
+}
+.header {
+    height: 10%;
+    background-color: blue;
+}
+.searchDiv {
+    float: left;
+}

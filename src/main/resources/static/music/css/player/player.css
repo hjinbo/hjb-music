@@ -1,0 +1,283 @@
+.musicPlayer .playerDiv .player, .musicPlayer .playerDiv .songProcess {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.musicPlayer {
+    position: absolute;
+    z-index: 10;
+    left: -480px;
+    top: 150px;
+    width: 500px;
+    height: 320px;
+    -webkit-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+/* 播放器显示隐藏 */
+.show {
+    width: 20px;
+    height: 80px;
+    display: block;
+    border: 0;
+    background: #111;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 480px;
+    /* left: 0px; */
+    -webkit-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+.show span {
+    width: 20px;
+    height: 30px;
+    display: block;
+    margin-top: 25px;
+    background: url("../../pic/img/player.png") no-repeat -90px -6px;
+    /* transform: rotate(180deg); */
+}
+.playerDiv {
+    width: 480px;
+    height: 300px;
+    border-radius: 5px;
+    float: left;
+    position: absolute;
+    /* left: 0; */
+    /* left: -480px;
+    top: 80px; */
+}
+/* 歌曲信息控制 */
+.playerDiv .player {
+    width: 480px;
+    height: 100px;
+    background-color: rgba(128, 84, 209, 0.5);
+}
+.playerDiv .songProcess {
+    width: 480px;
+    height: 5px;
+    background-color: #cccccc;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: inset 0 0 3px 0px #252121;
+}
+.playerDiv .songProcess .curProcess {
+    width: 0px;
+    height: 5px;
+    background-color: #6871ea;
+    border-radius: 50px;
+    box-shadow: inset 0 0 2px 0px #fff;
+}
+.playerDiv .player .songPic {
+    width: 100px;
+    height: 100px;
+    background: url("../../pic/img/hyrz.png") no-repeat;
+    background-size: 100% 100%;
+    float: left;
+}
+.playerDiv .player .songPic .lrcShow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.playerDiv .player .songPic .lrcShow .btn {
+    margin: 0px auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+    top: 35px;
+    cursor: pointer;
+    background: url("../../pic/img/lrc.png") no-repeat center;
+}
+.playerDiv .player .songPic:hover .lrcShow {
+    opacity: 1;
+    background: rgba(0, 0, 0, .5);
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+.playerDiv .player .rightOther {
+    width: 370px;
+    height: 100px;
+    margin-left: 110px;
+    /* background-color: skyblue; */
+}
+.playerDiv .player .rightOther .showPlayerList {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0;
+    left: 330px;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat -88px -85px;
+}
+.playerDiv .player .rightOther .showPlayerList:hover {
+    background-position: -115px -85px;
+}
+.playerDiv .player .rightOther .songOperator {
+    width: 350px;
+    height: 40px;
+    margin: 0 auto;
+}
+.playerDiv .player .rightOther #volume {
+    width: 80px;
+    height: 20px;
+    float: left;
+}
+.playerDiv .player .rightOther #volume #silence {
+    width: 20px;
+    height: 15px;
+    float: left;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat 0 -170px;
+}
+.playerDiv .player .rightOther #volume #silence:hover {
+    /* background-position: -19px -170px; */
+}
+.playerDiv .player .rightOther #volume #maxVolume {
+    width: 60px;
+    height: 5px;
+    margin-left: 20px;
+    position: relative;
+    top: 6px;
+    background-color: #cccccc;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.playerDiv .player .rightOther #volume #maxVolume #curVolume {
+    width: 60px;
+    height: 5px;
+    background-color: #a97664;
+    border-radius: 50px;
+    box-shadow: inset 0 0 2px 0px #fff;
+}
+.playerDiv .player .rightOther #last {
+    position: relative;
+    top: -6px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat 0 -112px;
+}
+.playerDiv .player .rightOther #last:hover {
+    background-position: -29px -112px;
+}
+.playerDiv .player .rightOther #start {
+    position: relative;
+    top: -12px;
+    left: 60px;
+    width: 35px;
+    height: 35px;
+    float: left;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat;
+}
+.playerDiv .player .rightOther #start:hover {
+    /* background-position: -41px 0; */
+}
+.playerDiv .player .rightOther #next {
+    position: relative;
+    top: -6px;
+    left: 85px;
+    width: 20px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat 0 -141px;
+}
+.playerDiv .player .rightOther #next:hover {
+    background-position: -29px -141px;
+}
+.playerDiv .player .rightOther #end {
+    position: relative;
+    top: -7px;
+    left: 115px;
+    width: 20px;
+    height: 20px;
+    float: left;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat 0 -83px;
+}
+.playerDiv .player .rightOther #end:hover {
+    background-position: -29px -83px;
+}
+.playerDiv .player .rightOther #playType {
+    position: relative;
+    top: 15px;
+    left: 310px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url("../../pic/img/player.png") no-repeat 0 -290px;
+}
+.playerDiv .player .rightOther .songTime {
+    width: 350px;
+    height: 15px;
+    margin: 10px auto;
+    /* background-color: gold; */
+}
+.playerDiv .player .rightOther .songTime #curTime {
+    color: #fff;
+    width: 40px;
+    text-align: center;
+    float: left;
+}
+.playerDiv .player .rightOther .songTime #maxTime {
+    color: #fff;
+    width: 40px;
+    text-align: center;
+    float: right;
+}
+.playerDiv .player .rightOther .songTime #songNameAndAuthor {
+    color: #fff;
+    width: 270px;
+    height: 20px;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+}
+/* 歌曲列表 */
+.playerDiv .playerList {
+    width: 480px;
+    height: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    color: #bdb0d2;
+}
+.playerDiv .playerList .song {
+    position: relative;
+    width: 450px;
+    height: 20px;
+    margin: 10px auto;
+    padding-left: 30px;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.playerDiv .playerList .song .songName {
+    margin-right: 5px;
+}
+.playerDiv .playerList .song:hover {
+    background-color: rgba(93, 69, 69, 0.5);
+}
+.playerDiv .playerList .song .removeSong {
+    padding-right: 30px;
+    float: right;
+    cursor: pointer;
+}
+.playerDiv .playerList .song .songAlbum {
+    position: absolute;
+    left: 230px;
+}
+.playerDiv .playerList .song .songTime {
+    position: absolute;
+    left: 380px;
+}

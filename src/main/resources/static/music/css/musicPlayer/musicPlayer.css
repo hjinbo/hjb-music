@@ -1,0 +1,24 @@
+.bottom {
+    width: 100%;
+    height: 10%;
+    background-color: #d6cccc;
+}
+.progress {
+    width: 100%;
+    height: 10px;
+}
+.musicInfo {
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+.btnDiv {
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+}
+.btn {
+    display: inline;
+    margin-left: 85;
+    line-height: 100px;
+}
