@@ -7,7 +7,8 @@ $(function() {
     var timer; // 改变syncStatus的定时器
     var songChangeTimer; 
     var showLyric = false;
-    var currentLrc = "[00:05.00]歌名：盗将行[00:10.00]歌手：花粥、马雨阳[00:18.00]劫过九重城关 我座下马正酣[00:23.00]看那轻飘飘的衣摆 趁擦肩把裙掀[00:29.00]踏遍三江六岸 借刀光做船帆[00:35.00]任露水浸透了短衫 大盗睥睨四野[00:43.00]枕风宿雪多年 我与虎谋早餐[00:49.00]拎着钓叟的鱼弦 问卧龙几两钱[00:55.00]蜀中大雨连绵 关外横尸遍野[01:02.00]你的笑像一条恶犬 撞乱了我心弦[01:23.00]谈花饮月赋闲 这春宵艳阳天[01:28.00]待到梦醒时分睁眼 铁甲寒意凛冽[01:34.00]夙愿只隔一箭 故乡近似天边[01:40.00]不知何人浅唱弄弦 我彷徨不可前[01:51.00]枕风宿雪多年 我与虎谋早餐[01:57.00]拎着钓叟的鱼弦 问卧龙几两钱[02:03.00]蜀中大雨连绵 关外横尸遍野[02:09.00]你的笑像一条恶犬 撞乱我心弦[02:15.00]烽烟万里如衔 掷群雄下酒宴[02:22.00]谢绝策勋十二转 想为你窃玉簪[02:28.00]入巷间吃汤面 笑看窗边飞雪[02:34.00]取腰间明珠弹山雀 立枇杷于庭前[02:45.00]入巷间吃汤面 笑看窗边飞雪[02:53.00]取腰间明珠弹山雀 立枇杷于庭前";
+    var currentLrc = "";
+    // var currentLrc = "[00:05.00]歌名：盗将行[00:10.00]歌手：花粥、马雨阳[00:18.00]劫过九重城关 我座下马正酣[00:23.00]看那轻飘飘的衣摆 趁擦肩把裙掀[00:29.00]踏遍三江六岸 借刀光做船帆[00:35.00]任露水浸透了短衫 大盗睥睨四野[00:43.00]枕风宿雪多年 我与虎谋早餐[00:49.00]拎着钓叟的鱼弦 问卧龙几两钱[00:55.00]蜀中大雨连绵 关外横尸遍野[01:02.00]你的笑像一条恶犬 撞乱了我心弦[01:23.00]谈花饮月赋闲 这春宵艳阳天[01:28.00]待到梦醒时分睁眼 铁甲寒意凛冽[01:34.00]夙愿只隔一箭 故乡近似天边[01:40.00]不知何人浅唱弄弦 我彷徨不可前[01:51.00]枕风宿雪多年 我与虎谋早餐[01:57.00]拎着钓叟的鱼弦 问卧龙几两钱[02:03.00]蜀中大雨连绵 关外横尸遍野[02:09.00]你的笑像一条恶犬 撞乱我心弦[02:15.00]烽烟万里如衔 掷群雄下酒宴[02:22.00]谢绝策勋十二转 想为你窃玉簪[02:28.00]入巷间吃汤面 笑看窗边飞雪[02:34.00]取腰间明珠弹山雀 立枇杷于庭前[02:45.00]入巷间吃汤面 笑看窗边飞雪[02:53.00]取腰间明珠弹山雀 立枇杷于庭前";
     var lrcList = new Array();
     var lrcTimeList = new Array();
     var lyricTimer;
@@ -99,13 +100,17 @@ $(function() {
         stopAutoPlayTimer();
         // 停止唱片转动
         stopRecordRoateTimer("end");
+        // 停止歌词定时器
+        stopLyricTimer();
 
         // 设置暂停图片
         $(".songOperator #start").css("background-position", "0 -42px");
         // 转动唱片
         startRecordRoateTimer();
-        // 启动定时器
+        // 启动自动播放定时器
         startAutoPlayTimer();
+        // 启动歌词定时器
+        startLyricTimer();
     }
 
     // 轮播图播放
@@ -130,38 +135,43 @@ $(function() {
             {id: "0", name: "火影原声", list: [
                 {
                     singer: [{name: "Akeboshi"}], 
-                    songUrl: "http://157.255.154.151/amobile.music.tc.qq.com/C400002isdZN3mMiik.m4a?guid=7068177850&vkey=DA58226DAA1F34CD34E72D653E0A2714976BC98B79E0A181C8A01114A0390B4FFF711806545B5F33D8CC25B11404A592379AE0641E80EE42&uin=5875&fromtag=66", 
+                    songUrl: "https://m10.music.126.net/20190430055025/2d9a626c847fd5579647e7314b52de05/ymusic/9e9b/4d03/b0d4/2a6bba4e5e26f605f0598bc2e0a977ed.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000004MqAwD15KeWx.jpg?max_age=2592000", 
                     songName: "Wind", 
-                    interval: "222"
+                    interval: "221",
+                    songLrc: "[00:00.0]未找到歌词"
                 },
                 {
                     singer: [{name: "AZU"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400002MOUyv1ogW2w.m4a?vkey=9DF5EA02C87AACDF47493B299C5E58DE0FA5AB80ACD4D626725A4DBFB02D589868F930827FA4B064A878EFA9DB6DE2D97F53BE21BDBFEC22&guid=479503354&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430054838/75a3d590509a42a659e887e75783114f/ymusic/6d03/fd10/d190/48b5ae121aedd90222a397abcb80a55b.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001CczYM1PrYPs.jpg?max_age=2592000", 
                     songName: "For You", 
-                    interval: "257"
+                    interval: "257",
+                    songLrc: "[00:11.58]ここにあるのは  君が今まで選んだ道の[00:17.18]答え達よ  ほら自信もって進めばいい[00:22.70]とても自然なの 雨上がりの[00:25.76]アスファルトに  虹が架かるように[00:34.04]Lonely 風が吹いて  Feeling 気がついたよ[00:39.54]答えはどこにも無いけど[00:44.97]Call me 分かってるわ  With you 愛はいつも[00:50.42]与え合うもの[00:55.19]For You  きっと君はいつの日か[00:58.95]この空を飛べるはずだから[01:01.68]何度つまずいたとしても For You[01:07.14]大切な事は1つ  夢見る事[01:11.54]心だけは閉ざさないでいて[01:20.52][01:25.93][01:27.93]傷ついても涙こらえ  我慢してたよね?[01:33.53]そんな君を一番近くで  見てきたから[01:39.00]何も言わなくても  分かってるよ[01:44.47]どんな時も頑張ってた事[01:50.36]Runaway 迷ったなら  Try again 何度だって[01:55.86]やり直す事できるから[02:01.34]I'm here 側にいるわ  Believing 恐れないで[02:06.77]信じ合うこと[02:11.60]For You  きっと君もいつの日か[02:15.29]この空を飛べるはずだから[02:18.01]何度傷ついたとしても For You[02:23.48]大切な事は1つ  夢見る事[02:27.92]瞳だけはそらさないでいて[02:37.59]君が描く勇気がほら[02:43.22]かけがえのない宝物に変わるよ[02:51.82]今両手ひろげ Fly high[02:58.95]きっと君はいつの日か[03:01.67]この空を飛べるはずだから[03:04.39]何度つまずいたとしても For You[03:09.84]大切な事は1つ  夢見る事[03:14.28]心だけは閉ざさないでいて[03:23.46][03:25.46]TV アニメ 「NARUTO -ナルト- 疾風伝」ED12[03:39.46]収録：AZU - For You (通常盤)／発売日：2010/03/03[03:48.46]"
                 },
                 {
                     singer: [{name: "高梨康治"}, {name: "刃-yaiba-"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400000fS9Gy27TZSX.m4a?vkey=5E6FC8C988FA2F3AAA351CAA79F55F28DD6BD0A86DDA0C4BB8B1B7C2CA721743154A0495A48D601E053E5276CAE0928DE27A899863F03EF4&guid=318210357&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430055221/819139977fc0877bb2d82ffdd06e0bbd/ymusic/7a65/2f82/ea99/3fa3c1ff7572df06fbdc8dfc79b73fd5.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001eAFPP0AFhYh.jpg?max_age=2592000", 
                     songName: "落葉船", 
-                    interval: "130"
+                    interval: "130",
+                    songLrc: "[00:00.0]未找到歌词"
                 },
                 {
                     singer: [{name: "増田俊郎"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400003hbVPP1HcDjb.m4a?vkey=8DA7C42347DFA20878A907746F778ECAF4F6071C4D1406F71EC3274B25305D0952564BC9F31B0A7409CD987C83D2EE39C87B0B40BE3EAF01&guid=50781687&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430055318/9efb0495a8b778e0346d05975d0659d2/ymusic/03c9/6e16/3629/e0376f3ced5edd7c9c3646924124c869.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000004MqAwD15KeWx.jpg?max_age=2592000", 
                     songName: "ひとり", 
-                    interval: "103"
+                    interval: "103",
+                    songLrc: "[00:00.0]未找到歌词"
                 },
                 {
                     singer: [{name: "石崎ひゅーい"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400002E1nYb1YJ6Jc.m4a?vkey=69483A017927D24CC3D80A60D154DC25A22B4F889F2A9C09BF796531E6F7DF43694D5942EFD7A96AB7B32D78D158D3EF56D405CB9914BFB4&guid=73158275&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430055354/dc5df17ef31f5a87e3cc564a9e0ecece/ymusic/8b76/6078/f2fa/8b523a4ed4dc19501d46881d1be1039f.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000016WBhm0zjMjA.jpg?max_age=2592000", 
                     songName: "ピノとアメリ", 
-                    interval: "271"
+                    interval: "271",
+                    songLrc: "[00:00.0]未找到歌词"
                 },
                 // {
                 //     singer: [{name: "六三四"}], 
@@ -175,74 +185,92 @@ $(function() {
                     songUrl: "https://dl.stream.qqmusic.qq.com/C400000a5qKl049ZSq.m4a?vkey=4C94D1210C3755BF4B2395B4F9AFB976D78F50DC51A55B472316F99CC8E2F465B33BB814C4C7C91C6A11740E57F5A4BE87C6247938149554&guid=1227621519&uin=0&fromtag=38", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001CJE971ev5fd.jpg?max_age=2592000", 
                     songName: "星のうつわ", 
-                    interval: "338"
+                    interval: "338",
+                    songLrc: "[00:00.0]未找到歌词"
                 }
             ]},
             {id: "1", name: "轻音乐", list: [
                 {
                     singer: [{name: "Ayasa"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400000rEXFy3W2We1.m4a?vkey=B24FF0CF961361B50B1018F9701509FC5187DF1FB14CD5629448717693535861624FD0C0FE19F73D0B366D25BD5B06B02999D71FFB6400F0&guid=520138824&uin=0&fromtag=38", 
+                    songUrl: "http://www.ytmp3.cn/down/59456.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000003kgM6R21GM7Y.jpg?max_age=2592000", 
                     songName: "告白の夜", 
-                    interval: "289"
+                    interval: "289",
+                    songLrc: "[00:00.0]轻音乐无歌词"
                 },
                 {
                     singer: [{name: "広橋真紀子"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400004J9zC301A51y.m4a?vkey=7D3AFF6DD2F82F531CC9807602E71A1E064CC896E6DB979CCABF46358477ED05976049D88DB54BC7B383AEEEA3649A319D3620637A6BF3C3&guid=877578267&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430061042/41f1a0f515269c15a5f799a32197e167/ymusic/0c97/d622/e70b/d5472bfcdc99af9d6c11e60b002bdaf1.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000003gyGib30T3BQ.jpg?max_age=2592000", 
                     songName: "いのちの名前 (生命之名)", 
-                    interval: "349"
+                    interval: "349",
+                    songLrc: "[00:00.0]轻音乐无歌词"
                 },
                 {
                     singer: [{name: "Key Sounds Label"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400002sXbjS1qsmbh.m4a?vkey=A2A57B0F67403C5488AA7B457B7F0E6450FEE6B13AFB3E1E025BDC87F7FD8234583DBA4088E3A0DBF6816AC056FF18C53112F94D3AD852AB&guid=265239354&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430055643/e9e1a7cda7b2ffb090db50279c86e31d/ymusic/871b/a4f6/2d2c/85f4680a9f8d4f06a4d79cff02f29df4.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001f2I4I3jRTAY.jpg?max_age=2592000", 
                     songName: "Bloom of Youth", 
-                    interval: "148"
+                    interval: "148",
+                    songLrc: "[00:00.0]轻音乐无歌词"
                 },
                 {
                     singer: [{name: "Piano Squall"}], 
                     songUrl: "https://dl.stream.qqmusic.qq.com/C400004cjBDF1mIFda.m4a?vkey=425A728D0FAB5551DEDD7C3BE5EFF99934CBAB84363873EC906A4E3CB595C9D51915189391615A57CA50B4ADD90B43434EE4481307A0D30C&guid=246442393&uin=0&fromtag=38", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001THSEv3MoXZx.jpg?max_age=2592000", 
                     songName: "Sadness And Sorrow", 
-                    interval: "173"
+                    interval: "173",
+                    songLrc: "[00:00.0]轻音乐无歌词"
                 }
             ]},
             {id: "2", name: "二次元", list: [
                 {
+                    singer: [{name: "米津玄師"}], 
+                    songUrl: "http://www.ytmp3.cn/down/51031.mp3", 
+                    songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000002OR8wD3Lo3E5.jpg?max_age=2592000", 
+                    songName: "Lemon", 
+                    interval: "255",
+                    songLrc: "[00:00.00]Lemon-米津玄師[00:01.53]词：米津玄師[00:01.55]曲：米津玄師[00:01.60]夢ならば[00:02.88]どれほどよかったでしょう[00:06.88]未だにあなたのことを夢にみる[00:12.41]忘れた物を取りに帰るように[00:17.91]古びた思い出の埃を払う[00:26.27]戻らない幸せがあることを[00:31.73]最後にあなたが教えてくれた[00:37.25]言えずに隠してた昏い過去も[00:42.80]あなたがいなきゃ[00:44.92]永遠に昏いまま[00:48.57]きっともうこれ以上[00:51.36]傷つくことなど[00:54.18]ありはしないとわかっている[00:58.98]あの日の悲しみさえ[01:01.74]あの日の苦しみさえ[01:04.52]そのすべてを愛してた[01:07.28]あなたとともに[01:09.98]胸に残り離れない[01:13.07]苦いレモンの匂い[01:15.84]雨が降り止むまでは帰れない[01:21.39]今でもあなたはわたしの光[01:37.98]暗闇であなたの背をなぞった[01:43.43]その輪郭を鮮明に覚えている[01:48.97]受け止めきれないものと[01:52.20]出会うたび[01:54.50]溢れてやまないのは涙だけ[02:00.32]何をしていたの[02:03.16]何を見ていたの[02:05.92]わたしの知らない横顔で[02:10.69]どこかであなたが今[02:13.43]わたしと同じ様な[02:16.31]涙にくれ[02:17.64]淋しさの中にいるなら[02:21.71]わたしのことなどどうか[02:24.85]忘れてください[02:27.60]そんなことを心から願うほどに[02:33.13]今でもあなたはわたしの光[02:41.64]自分が思うより[02:47.19]恋をしていたあなたに[02:52.72]あれから思うように[02:58.24]息ができない[03:03.33]あんなに側にいたのに[03:09.27]まるで嘘みたい[03:14.40]とても忘れられない[03:20.21]それだけが確か[03:30.81]あの日の悲しみさえ[03:33.41]あの日の苦しみさえ[03:36.22]そのすべてを愛してた[03:38.97]あなたとともに[03:41.67]胸に残り離れない[03:44.77]苦いレモンの匂い[03:47.61]雨が降り止むまでは帰れない[03:53.09]切り分けた果実の片方の様に[03:58.60]今でもあなたはわたしの光"
+                },
+                {
                     singer: [{name: "とあ/nameless"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400002lNU8S1Hyld2.m4a?vkey=9973513A356FFCF76E8B50859EB61C6D75DDB32EDF97A4D6BFC01BF4FB04659EADEF5C37AE012603635F243B6551B84003F404B5B30A6C21&guid=982307569&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430055741/9be2eb29fe4a4a61cc3cb8ca1ead2368/ymusic/1523/40fc/899a/eac188e0710a9ac1555d55e8c55adcee.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001WP7KJ2dqKGi.jpg?max_age=2592000", 
                     songName: "リグレット", 
-                    interval: "282"
+                    interval: "282",
+                    songLrc: "[by:九三][ti:リグレット][ar:nameless][al:212][0-1:55.200][00:36.130]かたづけて かたづけて[00:39.760]君の時間 僕の時間[00:43.050]鍵かけて 閉じ込めて[00:45.730]未来なんてさ 見えないでしょ[00:49.840]巡らせて 膨らませて[00:53.140]君の思い 僕の期待/[00:56.470]雨上がり 振り返り[00:59.010]届かないよな 見えないよな[01:02.460][01:02.980]引き摺ってんでしょ[01:05.440]目を覚ましてよ ねえ[01:08.130]「もうちょっとあとちょっと」って[01:11.080]いつまでキモチを潰してんの？[01:14.280][01:14.890]知りたいな 触れたいな[01:17.690]このままの距離じゃ見えないな[01:21.480]近づいて すれ違って[01:24.560]こんな僕じゃ愛せないな[01:28.150]意味なんて 理由なんて[01:31.280]とってつけたように並べても[01:34.790]変われないことくらいちゃんと[01:39.600]わかってるんだ[01:41.710][01:43.270]追いかけて 追いかけて[01:46.880]君の時間 僕の時間/[01:50.160]近づけて 遠ざけて[01:52.560]期待はずれの嘘ばっかじゃん[01:56.920]敷きつめて 散りばめて[02:00.200]眺めてたい 忘れてたい[02:03.490]昼下がり 振り返り[02:05.920]夢じゃないよな もう居ないよな[02:09.610][02:10.020]邪魔されてんなら[02:12.580]早く気づいてよ ねえ[02:15.050]「もうちょっとあとちょっと」って[02:18.390]いつまでココロを殺してんの？[02:21.570][02:22.780]言えないな  言えないな[02:25.530]弱虫の僕は要らないな[02:29.260]嘘吐いて 誤魔化して[02:32.350]傷つきたくないのはどっち？[02:35.940]今日もバイバイ 次もバイバイ[02:38.970]そんな瞳めで僕を見つめないで[02:42.560]変われないことくらいちゃんと[02:47.270]わかってるけど…[02:51.210][03:16.230]閉じかけた[03:19.570]開きそうな時間[03:22.940]「もう少し…あと少し…」[03:26.230]とどかない…とどかない…[03:29.980][03:33.270]知りたくて 触れたくて[03:36.260]何度進もうともがいたって[03:39.850]巻き戻して いつもどおり[03:42.980]こんな僕じゃ愛せないな[03:46.530]ねえ壊して また作って[03:49.610]いつまでも距離は変わらないね[03:53.110]戻れないことくらいちゃんと[03:57.970]わかってるでしょ？[04:00.610][04:01.370]…わかってるんだ… …"
                 },
                 {
                     singer: [{name: "とあ/nameless"}], 
                     songUrl: "https://dl.stream.qqmusic.qq.com/C400004aeAVG0kfhCL.m4a?vkey=85D7D1BD9E61E33A7F2288DC6B159510D266A9B39DE5CF140268C2BE15CC7D6ADD6725B96FAF52D763FDD1852D70B5006D3FBF5E50AF28A3&guid=1053729799&uin=0&fromtag=38", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001WP7KJ2dqKGi.jpg?max_age=2592000", 
                     songName: "恋の才能", 
-                    interval: "267"
+                    interval: "267",
+                    songLrc: "[by:九九九三三][ti:恋の才能][ar:nameless][al:212][by:九三][00:00.00][00:14.81]気にしてんじゃない？[00:18.35]揺れてんじゃない？[00:21.74]浮かれてんじゃない？[00:25.02]はまってんじゃない？[00:27.62][00:42.84]ばれてんじゃない？[00:46.33]漏れてんじゃない？[00:49.62]避けてんじゃない？[00:53.02]終わってんじゃない？[00:55.62][00:56.63]キラキラした君が大好きです[01:00.09]チラチラ見てるだけで精一杯です[01:03.53]フワフワ つかめないポジティブを[01:06.68]追いかけて 日が暮れて[01:09.81]ねぇ！[01:10.09][01:10.49]「恋の才能なんてないよ！ちょうだいよ！」って[01:13.68]ただの駄々捏ねじゃ はじまらないなー…[01:17.88]届かなくなる前に[01:20.86]少しでも[01:22.24]ねえ少しでも[01:24.36]難攻不落だって[01:27.10]一歩！[01:27.91][01:42.35]足りないんじゃない？[01:45.68]欠けてんじゃない？[01:49.20]怖いんじゃない？[01:52.59]焦ってんじゃない？[01:55.09][01:56.21]イライラして全部放り投げて[01:59.60]ソワソワして結局気になっちゃって[02:02.98]モヤモヤ 消えないネガティブを[02:06.35]追い払って 夜が明けて[02:09.24]もー！[02:09.76][02:10.12]「1,2の3じゃまだ跳べない…」なんて[02:13.16]四の五の言ってたら おいてかれるなー…[02:17.52]逃げられちゃう前に[02:20.50]少しでも[02:21.76]ねえ少しでも[02:23.89]悪戦苦闘したって[02:26.57]一歩！/[02:27.59][02:54.43]要らないんじゃない？[02:57.62]冷めてんじゃない？[03:01.07]呆れてんじゃない？[03:04.71]…やばいんじゃない？ ...[03:06.52][03:08.14]退いてんじゃない？[03:11.43]流してんじゃない？[03:14.87]壊れてんじゃない？[03:17.65]…だけど …[03:18.41]わかんないじゃない[03:20.64]…ねぇ？[03:21.84]…コイノサイノウ…/…[03:22.92][03:23.67]「恋の才能なんてもう要らない!」なんて[03:26.80]1,2の3の、“4”で飛べたらいいなー…[03:30.89]潰れちゃう その前に[03:34.03]少しでも[03:35.25]ねえ少しでも[03:37.42]無我夢中になって"
                 },
                 {
                     singer: [{name: "majiko (まじ娘)"}], 
                     songUrl: "https://dl.stream.qqmusic.qq.com/C400004SlTZQ3NWbAO.m4a?vkey=FC5131E6FDFCE565DD1AAB9DD493E70CA2BE941F432CF8B5BFA63DC28B2DBFD7F44B2F7428389F7E25CC6A0D7B7F323E1DC3B9E6AFF353B8&guid=788849075&uin=0&fromtag=38", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000002FzKSY0FcypL.jpg?max_age=2592000", 
                     songName: "アイロニ", 
-                    interval: "244"
+                    interval: "244",
+                    songLrc: "[00:00.0]未找到无歌词"
                 },
                 {
                     singer: [{name: "花たん"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C4000008wYUz3bbhc0.m4a?vkey=3C723BE48A6BDDEA32238B3F248AFF79A75FEC1A1CB5EE55F6478A12D3520823D9A2F85914C927B154A51AC63FBB14FDF4E13C9360C2CA79&guid=1681781604&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430060632/31dc637602687dc01ee2431a8e755946/ymusic/ab99/7b5a/e95d/63180c017ea00aed7305275be601102b.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T001R300x300M000000UxMkW4RxpBD.jpg?max_age=2592000", 
                     songName: "心做し", 
-                    interval: "268"
+                    interval: "268",
+                    songLrc: "[00:00.0]未找到无歌词"
                 },
                 {
                     singer: [{name: "鎖那"}], 
-                    songUrl: "https://dl.stream.qqmusic.qq.com/C400001GpLxv49FO3X.m4a?vkey=85789CCAF994EB6BE6BDBF14810B7B2084E3D29CEB26CCCAADBEA83F5BA5FE4B403C2151ECC648937DC1B8A51F7F8722510554BF500AB1B4&guid=371786930&uin=0&fromtag=38", 
+                    songUrl: "https://m10.music.126.net/20190430060911/e657688f3ea84ed50e77612c2b2744e5/ymusic/9478/f844/818d/bbf366351ad077e699f9f2cbf7061ed8.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000016f2u03s50MX.jpg?max_age=2592000", 
                     songName: "言葉のいらない約束", 
-                    interval: "254"
+                    interval: "254",
+                    songLrc: "[00:00.0]未找到无歌词"
                 }
             ]},
             {id: "3", name: "蝎", list: [
@@ -258,7 +286,8 @@ $(function() {
                     songUrl: "http://www.ytmp3.cn/down/48303.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000003iJBH73UYvmi.jpg?max_age=2592000", 
                     songName: "盗将行", 
-                    interval: "198"
+                    interval: "198",
+                    songLrc: '[00:05.00]歌名：盗将行[00:10.00]歌手：花粥、马雨阳[00:18.00]劫过九重城关 我座下马正酣[00:23.00]看那轻飘飘的衣摆 趁擦肩把裙掀[00:29.00]踏遍三江六岸 借刀光做船帆[00:35.00]任露水浸透了短衫 大盗睥睨四野[00:43.00]枕风宿雪多年 我与虎谋早餐[00:49.00]拎着钓叟的鱼弦 问卧龙几两钱[00:55.00]蜀中大雨连绵 关外横尸遍野[01:02.00]你的笑像一条恶犬 撞乱了我心弦[01:23.00]谈花饮月赋闲 这春宵艳阳天[01:28.00]待到梦醒时分睁眼 铁甲寒意凛冽[01:34.00]夙愿只隔一箭 故乡近似天边[01:40.00]不知何人浅唱弄弦 我彷徨不可前[01:51.00]枕风宿雪多年 我与虎谋早餐[01:57.00]拎着钓叟的鱼弦 问卧龙几两钱[02:03.00]蜀中大雨连绵 关外横尸遍野[02:09.00]你的笑像一条恶犬 撞乱我心弦[02:15.00]烽烟万里如衔 掷群雄下酒宴[02:22.00]谢绝策勋十二转 想为你窃玉簪[02:28.00]入巷间吃汤面 笑看窗边飞雪[02:34.00]取腰间明珠弹山雀 立枇杷于庭前[02:45.00]入巷间吃汤面 笑看窗边飞雪[02:53.00]取腰间明珠弹山雀 立枇杷于庭前'
                 }
                 
             ]},
@@ -268,14 +297,16 @@ $(function() {
                     songUrl: "http://112.90.152.146/amobile.music.tc.qq.com/C400000y1RuM0DPQpj.m4a?guid=7068177850&vkey=3D6823917C8DD2B5F99EE78CE5AB83A1EB56E17BCA1AAA33454007AE7A1CEBC5EFC5EB9A14222C2B8D21F9A29DDFCAFBDCCA85ECCC989272&uin=5875&fromtag=66", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000014XLHX0FQZHQ.jpg?max_age=2592000", 
                     songName: "Sign", 
-                    interval: "236"
+                    interval: "236",
+                    songLrc: "[00:00.0]未找到无歌词"
                 },
                 {
                     singer: [{name: "HALCALI"}], 
-                    songUrl: "http://27.36.118.29/amobile.music.tc.qq.com/C400003ztNHP00LOu3.m4a?guid=7068177850&vkey=8CD356E74BA7EF3B4C0CD4FFD718873A55A2DB00085AA2BD2A5338F099F615C82C48AD5231AE749D6E02B5402B733CAAF9C8B6E041A14EDD&uin=5875&fromtag=66", 
+                    songUrl: "https://m10.music.126.net/20190430060744/d3757ad7fdfc26622130293d22921858/ymusic/a425/33f4/16d4/b3eaed787faa0844907d891167befcd6.mp3", 
                     songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000000ihzmW0sGNWt.jpg?max_age=2592000", 
                     songName: "Long Kiss Good Bye", 
-                    interval: "246"
+                    interval: "246",
+                    songLrc: "[00:00.0]未找到无歌词"
                 }
             ]}
         ];
@@ -296,12 +327,18 @@ $(function() {
     function doubleClickPlay() {
         $(".playerDiv .playerList .song").dblclick(function() {
             var toPlayUrl = $(this).children(".songUrl").text();
+            var songName = $(this).children(".songName").text();
+            var author = $(this).children(".author").text();
+            var songAlbum = $(this).children(".songAlbum").text();
             var songPic = $(this).children(".songPic").text();
+            var songLrc = $(this).children(".songLrc").text();
             var player = document.getElementById("musicAudio");
             if (syncStatus !== 0) {
                 return;
             }
             player.src = toPlayUrl;
+            currentLrc = songLrc;
+            loadLyric(currentLrc);
             syncStatus = 1;
             // 将播放图片置为暂停图片
             $(".songOperator #start").css("background-position", "0 -42px");
@@ -310,10 +347,13 @@ $(function() {
             // 设置最大时长
             $(".songTime #maxTime").text($(this).children(".songTime").text());
             // 设置当前播放歌名及歌手
-            $(".songTime #songNameAndSinger").text($(this).children(".songNameAndSinger").text());
+            $(".songTime #songNameAndAuthor").text($(this).children(".songNameAndAuthor").text());
             // 设置歌词背景和唱片背景
             $(".musicLyric .lyricDivBack").css("background-image", "url(" + songPic + ")");
             $(".musicLyric .songPic").css("background-image", "url(" + songPic + ")");
+            $(".musicLyric .right .songInfo .songName").text(songName);
+            $(".musicLyric .right .songInfo .singer").text(author);
+            $(".musicLyric .right .songInfo .songAlbum").text(songAlbum);
             play();
             useTimer();
         });
@@ -465,13 +505,18 @@ $(function() {
                 var json = toJson(songList[curIndex]);
                 var player = document.getElementById("musicAudio");
                 player.src = json.url;
+                currentLrc = json.lrc;
+                loadLyric(currentLrc);
                 // 歌曲信息的设置
                 $(".player .songPic").css("background-image", "url(" + json.pic + ")");
                 $(".songTime #maxTime").text(json.time);
-                $(".songTime #songNameAndSinger").text(json.titleAndAuthor);
+                $(".songTime #songNameAndAuthor").text(json.titleAndAuthor);
                 // 歌词背景图片和唱片背景图片
                 $(".musicLyric .lyricDivBack").css("background-image", "url(" + json.pic + ")");
                 $(".musicLyric .songPic").css("background-image", "url(" + json.pic + ")");
+                $(".musicLyric .right .songInfo .songName").text(json.title);
+                $(".musicLyric .right .songInfo .singer").text(json.author);
+                $(".musicLyric .right .songInfo .songAlbum").text(json.albumName);
                 doubleClickPlay();
                 removeListSong();
                 play();
@@ -503,13 +548,18 @@ $(function() {
                 var json = toJson(songList[curIndex]);
                 var player = document.getElementById("musicAudio");
                 player.src = json.url;
+                currentLrc = json.lrc;
+                loadLyric(currentLrc);
                 // 歌曲信息的设置
                 $(".player .songPic").css("background-image", "url(" + json.pic + ")");
                 $(".songTime #maxTime").text(json.time);
-                $(".songTime #songNameAndSinger").text(json.titleAndAuthor);
+                $(".songTime #songNameAndAuthor").text(json.titleAndAuthor);
                 // 歌词背景图片和唱片背景图片
                 $(".musicLyric .lyricDivBack").css("background-image", "url(" + json.pic + ")");
                 $(".musicLyric .songPic").css("background-image", "url(" + json.pic + ")");
+                $(".musicLyric .right .songInfo .songName").text(json.title);
+                $(".musicLyric .right .songInfo .singer").text(json.author);
+                $(".musicLyric .right .songInfo .songAlbum").text(json.albumName);
                 doubleClickPlay();
                 removeListSong();
                 play();
@@ -526,8 +576,8 @@ $(function() {
     $(".songOperator #end").click(function() {
         // 将歌曲的当前时间设置为0， 并将歌曲暂停播放
         var player = document.getElementById("musicAudio");
-        player.currentTime = 0;
         player.pause();
+        player.currentTime = 0;
         // 将暂停图片置为播放图片
         $(".songOperator #start").css("background-position", "0 0");
         isPlaying = false;
@@ -624,7 +674,7 @@ $(function() {
                 loadLyric(currentLrc);
                 isLoadLyric = true;
             }
-            startLyricTimer();
+            // startLyricTimer();
             $(".musicLyric").css("display", "");
             $(".notLyric").css("display", "none");
             $(".musicPlayer").css("top", "280px");
@@ -634,7 +684,7 @@ $(function() {
             $(".musicLyric .songPic").css("background-image", curSongPic);
             showLyric = true;
         } else {
-            stopLyricTimer();
+            // stopLyricTimer();
             $(".musicLyric").css("display", "none");
             $(".notLyric").css("display", "");
             $(".musicPlayer").css("top", "150px");
@@ -644,6 +694,8 @@ $(function() {
 
     // 解析歌词
     function loadLyric(lrc) {
+        lrcList = new Array();
+        lrcTimeList = new Array();
         $("#lyric").empty();
         var lrcListTmp = lrc.split('[');
         // 前面补充3个span
@@ -812,14 +864,16 @@ $(function() {
                 author = author.substr(0, author.length - 1);
             }
         }
-        var lrc = "";
+        var lrc = vSongJson.songLrc;
         var pic = vSongJson.songPic;
         var url = vSongJson.songUrl;
         var title = vSongJson.songName;
         var titleAndAuthor = title + "-" + author;
         var time = intervalFormat(vSongJson.interval);
-        var albumName = "";
-        var songNameAndSinger = "<span class='songNameAndSinger'>" + titleAndAuthor + "</span>";
+        var albumName = vSongJson.songAlbum;
+        var songNameAndAuthor = "<span class='songNameAndAuthor'>" + titleAndAuthor + "</span>";
+        var songName = "<span class='songName' style='display: none;'>" + title + "</span>";
+        var songAuthor = "<span class='author' style='display: none;'>" + author + "</span>";
         var songAlbum = "<span class='songAlbum'>" + albumName + "</span>";
         var songTime = "<span class='songTime'>" + time + "</span>";
         var songLrc = "<span class='songLrc' style='display: none;'>" + lrc + "</span>";
@@ -827,8 +881,10 @@ $(function() {
         var songUrl = "<span class='songUrl' style='display: none;'>" + url + "</span>";
         // 列表移除存在问题
         var removeSong = "<span class='removeSong'>X</span>";
-        var song = "<div class='song'>" + songNameAndSinger + songTime + songLrc + songPic + songUrl + "</div>";
+        var song = "<div class='song'>" + songNameAndAuthor + songName + songAuthor + songAlbum + songTime + songLrc + songPic + songUrl + "</div>";
         var songJson = JSON.stringify({
+            title: title,
+            author: author,
             titleAndAuthor: titleAndAuthor,
             time: time,
             albumName: albumName,
@@ -846,7 +902,10 @@ $(function() {
                 $(".player .songPic").css("background-image", "url(" + pic + ")");
                 $(".songTime #maxTime").text(time);
                 $(".songTime #songNameAndSinger").text(titleAndAuthor);
-                // currentLrc = lrc;
+                $(".musicLyric .right .songInfo .songName").text(title);
+                $(".musicLyric .right .songInfo .singer").text(author);
+                $(".musicLyric .right .songInfo .songAlbum").text(albumName);
+                currentLrc = lrc;
                 // 将播放图片置为暂停图片
                 $(".songOperator #start").css("background-position", "0 -42px");
             } else {
@@ -874,14 +933,16 @@ $(function() {
                     author = author.substr(0, author.length - 1);
                 }
             }
-            var lrc = "";
+            var lrc = songs[i].songLrc;
             var pic = songs[i].songPic;
             var url = songs[i].songUrl;
             var title = songs[i].songName;
             var titleAndAuthor = title + "-" + author;
             var time = intervalFormat(songs[i].interval);
-            var albumName = "";
-            var songNameAndSinger = "<span class='songNameAndSinger'>" + titleAndAuthor + "</span>";
+            var albumName = songs[i].songAlbum;
+            var songNameAndAuthor = "<span class='songNameAndAuthor'>" + titleAndAuthor + "</span>";
+            var songName = "<span class='songName' style='display: none;'>" + title + "</span>";
+            var songAuthor = "<span class='author' style='display: none;'>" + author + "</span>";
             var songAlbum = "<span class='songAlbum'>" + albumName + "</span>";
             var songTime = "<span class='songTime'>" + time + "</span>";
             var songLrc = "<span class='songLrc' style='display: none;'>" + lrc + "</span>";
@@ -889,8 +950,10 @@ $(function() {
             var songUrl = "<span class='songUrl' style='display: none;'>" + url + "</span>";
             // 列表移除存在问题
             var removeSong = "<span class='removeSong'>X</span>";
-            var song = "<div class='song'>" + songNameAndSinger + songTime + songLrc + songPic + songUrl + "</div>";
+            var song = "<div class='song'>" + songNameAndAuthor + songName + songAuthor + songAlbum + songTime + songLrc + songPic + songUrl + "</div>";
             var songJson = JSON.stringify({
+                title: title,
+                author: author,
                 titleAndAuthor: titleAndAuthor,
                 time: time,
                 albumName: albumName,
@@ -910,7 +973,10 @@ $(function() {
                         $(".player .songPic").css("background-image", "url(" + pic + ")");
                         $(".songTime #maxTime").text(time);
                         $(".songTime #songNameAndAuthor").text(titleAndAuthor);
-                        // currentLrc = lrc;
+                        $(".musicLyric .right .songInfo .songName").text(title);
+                        $(".musicLyric .right .songInfo .singer").text(author);
+                        $(".musicLyric .right .songInfo .songAlbum").text(albumName);
+                        currentLrc = lrc;
                     }
                     // 将播放图片置为暂停图片
                     $(".songOperator #start").css("background-position", "0 -42px");

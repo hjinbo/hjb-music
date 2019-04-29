@@ -34,7 +34,7 @@ $(function() {
     var isPlaying = false;
     var curLyricLocation = 0;
 
-    loadLyric(lrc);
+    // loadLyric(lrc);
     
     // 解析歌词
     function loadLyric(lrc) {
@@ -160,7 +160,7 @@ $(function() {
     });
 
     var timer;
-    startSongTime();
+    // startSongTime();
     function startSongTime() {
         timer = setInterval(showSongTime, 300);
     }
