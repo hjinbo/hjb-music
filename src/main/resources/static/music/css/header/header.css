@@ -12,8 +12,18 @@
     width: 200px;
     height: 50px;
     float: left;
-    background-color: skyblue;
+    text-align: center;
+    text-transform: uppercase;
     margin-left: 50px;
+    line-height: 50px;
+    font-weight: 900;
+    color: #fff;
+    cursor: pointer;
+    font-size: xx-large;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .headerBack .searchDiv {
     width: 200px;
@@ -26,19 +36,27 @@
 }
 .headerBack .searchDiv #searchText {
     border: hidden;
-    width: 90%;
+    width: 60%;
     height: 100%;
     padding: 0 10px;
     outline: none;
     background-color: #eee;
     border-radius: 20px;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    -ms-transition: .5s ease;
+    transition: .5s ease;
+}
+.headerBack .searchDiv #searchText:hover {
+    width: 90%;
 }
 .headerBack .submit {
     width: 50px;
     height: 30px;
     float: left;
     border-radius: 20px;
-    background-color: #1296db;
+    background-color: #261d4a;
+    color: #fff;
     margin-left: 30px;
     position: relative;
     top: 10px;
@@ -55,7 +73,9 @@
     -moz-transition: .5s ease;
     -ms-transition: .5s ease;
     transition: .5s ease;
-    background-color: #d4237a;
+    background-color: #fff;
+    color: #261d4a;
+    box-shadow: 0 0 8px 0px #eee;
 }
 .headerBack .changeStyle {
     width: 50px;

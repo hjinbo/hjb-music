@@ -36,12 +36,13 @@
     top: 0;
     left: 270px;
     width: 200px;
-    height: 20px;
+    height: 50px;
     background-color: #fff;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
+    background: url("../../pic/img/stylus.png");
+    /* -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg); */
     text-align: right;
     -webkit-transition: 300ms;
     -moz-transition: 300ms;

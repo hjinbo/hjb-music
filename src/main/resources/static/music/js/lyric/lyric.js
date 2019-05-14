@@ -105,10 +105,10 @@ $(function() {
     // 唱针旋转样式(包括了唱片的旋转)
     function recordRoate() {
         if (isPlaying || !isSongEnd()) {
-            $(".musicLyric .stylus").css("-webkit-transform", "rotate(65deg)");
-            $(".musicLyric .stylus").css("-moz-transform", "rotate(65deg)");
-            $(".musicLyric .stylus").css("-ms-transform", "rotate(65deg)");
-            $(".musicLyric .stylus").css("transform", "rotate(65deg)");
+            $(".musicLyric .stylus").css("-webkit-transform", "rotate(45deg)");
+            $(".musicLyric .stylus").css("-moz-transform", "rotate(45deg)");
+            $(".musicLyric .stylus").css("-ms-transform", "rotate(45deg)");
+            $(".musicLyric .stylus").css("transform", "rotate(45deg)");
             // 不用动画
             // setTimeout(() => {
             //     $(".musicLyric .songPicOutter").addClass("rotation");
@@ -134,10 +134,10 @@ $(function() {
             // $(".musicLyric .songPic").removeClass("rotation");
             clearInterval(rotateTimer);
             rotateTimer = null;
-            $(".musicLyric .stylus").css("-webkit-transform", "rotate(45deg)");
-            $(".musicLyric .stylus").css("-moz-transform", "rotate(45deg)");
-            $(".musicLyric .stylus").css("-ms-transform", "rotate(45deg)");
-            $(".musicLyric .stylus").css("transform", "rotate(45deg)");
+            $(".musicLyric .stylus").css("-webkit-transform", "rotate(0deg)");
+            $(".musicLyric .stylus").css("-moz-transform", "rotate(0deg)");
+            $(".musicLyric .stylus").css("-ms-transform", "rotate(0deg)");
+            $(".musicLyric .stylus").css("transform", "rotate(0deg)");
         }
     }
     
