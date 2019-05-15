@@ -29,18 +29,20 @@ $(function() {
         {id: "0", name: "火影原声", list: [
             {
                 singer: [{name: "Akeboshi"}], 
-                songUrl: "https://m10.music.126.net/20190430055025/2d9a626c847fd5579647e7314b52de05/ymusic/9e9b/4d03/b0d4/2a6bba4e5e26f605f0598bc2e0a977ed.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024858/cf7d8cf9093569296db2f04ccd0a294d/ymusic/79de/dd7c/e7d3/ef570d7fc700cd02b95e3b55a241fa80.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000004MqAwD15KeWx.jpg?max_age=2592000", 
                 songName: "Wind", 
-                interval: "221",
-                songLrc: "[00:00.0]未找到歌词"
+                songAlbum: "", 
+                interval: "221", 
+                songLrc: "[by:GigaGalaxy][ti:Wind][ar:Akeboshi][00:00.000] 作曲 : Akeboshi[00:00.000] 作词 : Akeboshi[00:00.00]Akeboshi - Wind[00:30.19][00:33.19][00:36.19][00:38.19]Cultivate your hunger before you idealize[00:41.71]Motivate your anger to make them all realize[00:44.96]Climbing the moutain. Never coming down[00:48.37]Break into the contents. Never falling down[00:51.99][00:58.53]My knee is still shaking like I was twelve[01:02.00]Sneaking out the class room by the back door[01:05.34]A man railed at me twice but I didn't care[01:08.74]Waiting is wasting for people like me.[01:25.83][01:12.33]Don't try to look so wise.[01:29.35][01:15.68]Don't cry 'cause you're so right.[01:32.73][01:19.12]Don't dry with fakes or fears.[01:36.02][01:22.39]Cause you will hate yourself in the end.[01:39.55][01:39.98]You say 'dreams are dreams.[01:43.40]I ain't gonna play the fool anymore.'[01:50.24]You say 'cause I still got my soul.'[01:53.99]Take your time baby your blood needs to slowing down.[01:57.27]Breach your soul.Reach yourself before you gloom.[02:00.62]Reflection of fear makes shadows of nothing.[02:05.77]Shadows of nothing.[02:08.62][02:14.27]You still are blind if you see a wind road.[02:17.60]Cause there is always a straight way to the point you see[02:34.97][03:04.56][02:50.93][02:21.29]Don't try to look so wise.[03:07.97][02:54.39][02:24.52]Don't cry 'cause you're so right.[03:11.40][02:57.73][02:27.99]Don't dry with fakes or fears.[03:28.41][03:24.93][03:21.56][03:18.12][03:14.64][03:01.04][02:31.31]Cause you will hate yourself in the end.[03:33.39]"
             },
             {
                 singer: [{name: "AZU"}], 
-                songUrl: "https://m10.music.126.net/20190430054838/75a3d590509a42a659e887e75783114f/ymusic/6d03/fd10/d190/48b5ae121aedd90222a397abcb80a55b.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024839/79a147383a4c32f682e9981000ba604d/ymusic/3f5a/b6cf/8c7f/6cd1057ca1f2c911c29e19fe8f7ac714.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001CczYM1PrYPs.jpg?max_age=2592000", 
                 songName: "For You", 
-                interval: "257",
+                songAlbum: "", 
+                interval: "257", 
                 songLrc: "[00:11.58]ここにあるのは  君が今まで選んだ道の[00:17.18]答え達よ  ほら自信もって進めばいい[00:22.70]とても自然なの 雨上がりの[00:25.76]アスファルトに  虹が架かるように[00:34.04]Lonely 風が吹いて  Feeling 気がついたよ[00:39.54]答えはどこにも無いけど[00:44.97]Call me 分かってるわ  With you 愛はいつも[00:50.42]与え合うもの[00:55.19]For You  きっと君はいつの日か[00:58.95]この空を飛べるはずだから[01:01.68]何度つまずいたとしても For You[01:07.14]大切な事は1つ  夢見る事[01:11.54]心だけは閉ざさないでいて[01:20.52][01:25.93][01:27.93]傷ついても涙こらえ  我慢してたよね?[01:33.53]そんな君を一番近くで  見てきたから[01:39.00]何も言わなくても  分かってるよ[01:44.47]どんな時も頑張ってた事[01:50.36]Runaway 迷ったなら  Try again 何度だって[01:55.86]やり直す事できるから[02:01.34]I'm here 側にいるわ  Believing 恐れないで[02:06.77]信じ合うこと[02:11.60]For You  きっと君もいつの日か[02:15.29]この空を飛べるはずだから[02:18.01]何度傷ついたとしても For You[02:23.48]大切な事は1つ  夢見る事[02:27.92]瞳だけはそらさないでいて[02:37.59]君が描く勇気がほら[02:43.22]かけがえのない宝物に変わるよ[02:51.82]今両手ひろげ Fly high[02:58.95]きっと君はいつの日か[03:01.67]この空を飛べるはずだから[03:04.39]何度つまずいたとしても For You[03:09.84]大切な事は1つ  夢見る事[03:14.28]心だけは閉ざさないでいて[03:23.46][03:25.46]TV アニメ 「NARUTO -ナルト- 疾風伝」ED12[03:39.46]収録：AZU - For You (通常盤)／発売日：2010/03/03[03:48.46]"
             },
             {
@@ -48,6 +50,7 @@ $(function() {
                 songUrl: "https://m10.music.126.net/20190430055221/819139977fc0877bb2d82ffdd06e0bbd/ymusic/7a65/2f82/ea99/3fa3c1ff7572df06fbdc8dfc79b73fd5.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001eAFPP0AFhYh.jpg?max_age=2592000", 
                 songName: "落葉船", 
+                songAlbum: "", 
                 interval: "130",
                 songLrc: "[00:00.0]轻音乐请欣赏"
             },
@@ -56,24 +59,27 @@ $(function() {
                 songUrl: "https://m10.music.126.net/20190430055318/9efb0495a8b778e0346d05975d0659d2/ymusic/03c9/6e16/3629/e0376f3ced5edd7c9c3646924124c869.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000004MqAwD15KeWx.jpg?max_age=2592000", 
                 songName: "ひとり", 
+                songAlbum: "", 
                 interval: "103",
                 songLrc: "[00:00.0]未找到歌词"
             },
             {
                 singer: [{name: "石崎ひゅーい"}], 
-                songUrl: "https://m10.music.126.net/20190430055354/dc5df17ef31f5a87e3cc564a9e0ecece/ymusic/8b76/6078/f2fa/8b523a4ed4dc19501d46881d1be1039f.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024810/8dbd45157008e0067efdf1e467bcec1e/ymusic/dda5/b1ff/85ab/670b0e0d3ee705bf8f4c29913d923cc6.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000016WBhm0zjMjA.jpg?max_age=2592000", 
                 songName: "ピノとアメリ", 
+                songAlbum: "", 
                 interval: "271",
                 songLrc: "[00:00.0]未找到歌词"
             },
             {
                 singer: [{name: "スキマスイッチ"}], 
-                songUrl: "https://dl.stream.qqmusic.qq.com/C400000a5qKl049ZSq.m4a?vkey=4C94D1210C3755BF4B2395B4F9AFB976D78F50DC51A55B472316F99CC8E2F465B33BB814C4C7C91C6A11740E57F5A4BE87C6247938149554&guid=1227621519&uin=0&fromtag=38", 
+                songUrl: "http://m10.music.126.net/20190515024752/de074d6d5ba9e2840c35b509ad96dfa3/ymusic/be66/ff32/31c6/4abd7427d4a022c602bd3567e7b302c4.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001CJE971ev5fd.jpg?max_age=2592000", 
                 songName: "星のうつわ", 
+                songAlbum: "", 
                 interval: "338",
-                songLrc: "[00:00.0]未找到歌词"
+                songLrc: "[00:40.850]どうして どうして 泣いて生まれて[00:46.090]いつか泣かれて 星になっていくんだろう[00:51.780]僕らはどうして どうして 教わってないのに[00:57.610]涙の流し方は 知ってるんだろう[01:03.280][01:03.720]溢れる雫は 絶え間なく注がれた愛情の証で[01:15.560]導かれるまま ゆるやかにそっと 伝ってきたんだ[01:25.940][01:29.990]こころからからだへ からだはこころへ[01:36.420]連なるいくつもの 絡み合った らせんの模様[01:42.330]そのひとつひとつに 未来が見えたなら[01:48.380]眺めているこの空も ほら 宇宙に見える[01:56.090][02:09.780]どうして どうして 月はいつでも[02:14.680]何も言わないで 闇を照らしているんだろう[02:20.700]僕らはどうして どうして 鼓動の数に[02:26.460]限りがあるってのを知っていて ムダにしちゃうんだろう[02:31.960][02:32.470]胸に抱えている器の 大きさに価値を見出すんじゃなくて[02:44.320]その中にある 熱を帯びたタネに “生命(いのち)”を感じたい[02:55.380][02:59.170]どんなに眼を凝らして 自分を見ようとしても[03:05.550]ぼやけてよく見えないや そのうち見失ってしまう[03:11.380]探せば探すほど 散らかしてしまうなら[03:16.910]見様見真似だってこの手で そう 作ればいい[03:25.240][03:52.530]生きるっていうこと それはきっと 少しずつ手放していくこと[04:04.180]最後の一つを失うその時 そばにいて 涙をくれる人がいる[04:21.970]それで嬉しい[04:24.680]こころからからだへ からだはこころへ[04:31.260]連なるいくつもの 受け継ぐ らせんの模様[04:37.110]繰り返されてくことが 永遠だと思えた時[04:42.830]目の前の景色すべてが いま、宇宙になった[04:51.450][05:34.550]"
             }
         ]},
         {id: "1", name: "轻音乐", list: [
@@ -126,7 +132,7 @@ $(function() {
             },
             {
                 singer: [{name: "とあ/nameless"}], 
-                songUrl: "https://m10.music.126.net/20190430055741/9be2eb29fe4a4a61cc3cb8ca1ead2368/ymusic/1523/40fc/899a/eac188e0710a9ac1555d55e8c55adcee.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024724/ea51fd77dbfcb72526f89cbf86e9f142/ymusic/16ce/4284/0c4f/69b7e67e22250151da70e59b68dbfa0c.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001WP7KJ2dqKGi.jpg?max_age=2592000", 
                 songName: "リグレット", 
                 songAlbum: "", 
@@ -135,7 +141,7 @@ $(function() {
             },
             {
                 singer: [{name: "とあ/nameless"}], 
-                songUrl: "https://m10.music.126.net/20190430063853/908aa87241876bbd11fc66c4c497a0e0/ymusic/8c41/76a9/b076/5a593d542f5a1326cd5a9661ec29cbe0.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024704/1d8796945bf51692b51900e0bd7077a8/ymusic/d6e2/7cfe/dc91/0a20f4d0686f7fc30ecd72c7cfdd0d9a.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001WP7KJ2dqKGi.jpg?max_age=2592000", 
                 songName: "恋の才能", 
                 songAlbum: "", 
@@ -144,7 +150,7 @@ $(function() {
             },
             {
                 singer: [{name: "majiko (まじ娘)"}], 
-                songUrl: "https://dl.stream.qqmusic.qq.com/C400004SlTZQ3NWbAO.m4a?vkey=FC5131E6FDFCE565DD1AAB9DD493E70CA2BE941F432CF8B5BFA63DC28B2DBFD7F44B2F7428389F7E25CC6A0D7B7F323E1DC3B9E6AFF353B8&guid=788849075&uin=0&fromtag=38", 
+                songUrl: "http://m10.music.126.net/20190515024643/e142ace5420666de62b6a4e4036c1f41/ymusic/c56f/01e4/c53f/9391fa5bd14d01e04d488d62dda78e43.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000002FzKSY0FcypL.jpg?max_age=2592000", 
                 songName: "アイロニ", 
                 songAlbum: "", 
@@ -153,7 +159,7 @@ $(function() {
             },
             {
                 singer: [{name: "花たん"}], 
-                songUrl: "https://m10.music.126.net/20190430060632/31dc637602687dc01ee2431a8e755946/ymusic/ab99/7b5a/e95d/63180c017ea00aed7305275be601102b.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024440/e487268a2abd1b702318d6bfefdcce5b/ymusic/cb56/cf61/0791/8ce4f3adde3b8ef67193a55a59b8c4dc.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T001R300x300M000000UxMkW4RxpBD.jpg?max_age=2592000", 
                 songName: "心做し", 
                 songAlbum: "", 
@@ -162,7 +168,7 @@ $(function() {
             },
             {
                 singer: [{name: "鎖那"}], 
-                songUrl: "https://m10.music.126.net/20190430060911/e657688f3ea84ed50e77612c2b2744e5/ymusic/9478/f844/818d/bbf366351ad077e699f9f2cbf7061ed8.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024516/a8c7003f851ef468f96326b4b0eb136e/ymusic/c822/6506/d1f2/4ffeb6104809983f50910aad39b377fb.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000016f2u03s50MX.jpg?max_age=2592000", 
                 songName: "言葉のいらない約束", 
                 songAlbum: "", 
@@ -193,7 +199,7 @@ $(function() {
         {id: "4", name: "鼬", list: [
             {
                 singer: [{name: "FLOW"}], 
-                songUrl: "http://112.90.152.146/amobile.music.tc.qq.com/C400000y1RuM0DPQpj.m4a?guid=7068177850&vkey=3D6823917C8DD2B5F99EE78CE5AB83A1EB56E17BCA1AAA33454007AE7A1CEBC5EFC5EB9A14222C2B8D21F9A29DDFCAFBDCCA85ECCC989272&uin=5875&fromtag=66", 
+                songUrl: "http://m10.music.126.net/20190515024542/4119da4c59df11e0b3ca89bfdb40e359/ymusic/613b/769b/4546/9929f729f9394abec360c045dbf295ff.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000014XLHX0FQZHQ.jpg?max_age=2592000", 
                 songName: "Sign", 
                 songAlbum: "", 
@@ -202,7 +208,7 @@ $(function() {
             },
             {
                 singer: [{name: "HALCALI"}], 
-                songUrl: "https://m10.music.126.net/20190430060744/d3757ad7fdfc26622130293d22921858/ymusic/a425/33f4/16d4/b3eaed787faa0844907d891167befcd6.mp3", 
+                songUrl: "http://m10.music.126.net/20190515024614/b01412b5f392477ffd97ade667b33060/ymusic/de19/808e/f5b0/82507996165a33dc688abc77a75d61b4.mp3", 
                 songPic: "https://y.gtimg.cn/music/photo_new/T002R300x300M000000ihzmW0sGNWt.jpg?max_age=2592000", 
                 songName: "Long Kiss Good Bye", 
                 songAlbum: "", 
@@ -663,10 +669,10 @@ $(function() {
                 offset: "200px"
             });
         } else {
-            layer.msg("该部分歌曲播放来源还在完善, 请浏览下方歌曲", {
-                offset: "200px"
-            });
-            return;
+            // layer.msg("该部分歌曲播放来源还在完善, 请浏览下方歌曲", {
+            //     offset: "200px"
+            // });
+            // return;
             var slider = sliderList[id].list;
             addSongList(slider);
             doubleClickPlay();
@@ -1209,6 +1215,7 @@ $(function() {
         var url = vSongJson.songUrl;
         var title = vSongJson.songName;
         var titleAndAuthor = title + "-" + author;
+        console.log("titleAndAuthor:" + titleAndAuthor);
         var time = intervalFormat(vSongJson.interval);
         var albumName = vSongJson.songAlbum;
         var songNameAndAuthor = "<span class='songNameAndAuthor'>" + titleAndAuthor + "</span>";
@@ -1241,7 +1248,7 @@ $(function() {
                 player.src = url;
                 $(".player .songPic").css("background-image", "url(" + pic + ")");
                 $(".songTime #maxTime").text(time);
-                $(".songTime #songNameAndSinger").text(titleAndAuthor);
+                $(".songTime #songNameAndAuthor").text(titleAndAuthor);
                 $(".musicLyric .right .songInfo .songName").text(title);
                 $(".musicLyric .right .songInfo .singer").text(author);
                 $(".musicLyric .right .songInfo .songAlbum").text(albumName);
