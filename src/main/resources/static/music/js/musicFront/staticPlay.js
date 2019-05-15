@@ -669,10 +669,10 @@ $(function() {
                 offset: "200px"
             });
         } else {
-            // layer.msg("该部分歌曲播放来源还在完善, 请浏览下方歌曲", {
-            //     offset: "200px"
-            // });
-            // return;
+            layer.msg("该部分歌曲播放来源还在完善, 请浏览下方歌曲", {
+                offset: "200px"
+            });
+            return;
             var slider = sliderList[id].list;
             addSongList(slider);
             doubleClickPlay();
