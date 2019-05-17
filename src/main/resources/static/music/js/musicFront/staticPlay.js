@@ -449,14 +449,14 @@ $(function() {
             mvName: "那些花儿",
             mvPicUrl: "http://y.gtimg.cn/music/photo_new/T015R640x360M101000QY9sl40w2IL.jpg",
             mvSrcList: [
-                "http://hc.yinyuetai.com/uploads/videos/common/BE29016417BE8AA49858A88D1B7DF365.mp4?sc=3bd21427d44dbbbf&br=777&vid=3233814&aid=269&area=ML&vst=3"
+                "http://hc.yinyuetai.com/uploads/videos/common/BE29016417BE8AA49858A88D1B7DF365.mp4"
             ]
         },
         {
             mvName: "故乡",
             mvPicUrl: "http://imgcdn.170mv.com/video/mv/180720/0/-M-7180bb636ee0c4fe2509019c0aa2a06a_640x360.jpg?imageView2/format/jpg/q/40",
             mvSrcList: [
-                "http://www.170mv.com/tool/jiexi/ajax/pid/13150/vid/3253990.mp4"
+                "http://hc.yinyuetai.com/uploads/videos/common/7AC90164B63D9B2ACAA3125FE798D3BB.mp4"
             ]
         },
         {
@@ -495,10 +495,10 @@ $(function() {
             ]
         },
         {
-            mvName: "从你的全世界来过",
+            mvName: "从你的全世界路过",
             mvPicUrl: "http://imgcdn.170mv.com/video/mv/160928/2690027/-M-fe8c4d2ca61259115737b61702434701_640x360.jpg?imageView2/format/jpg/q/40",
             mvSrcList: [
-                "http://www.170mv.com/tool/jiexi/ajax/pid/12420/vid/2690027.mp4"
+                "http://hc.yinyuetai.com/uploads/videos/common/793B015770EE4415162C74951451B109.flv"
             ]
         }
     ];
