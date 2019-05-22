@@ -974,8 +974,10 @@ $(function() {
     function isSongEnd() {
         var player = document.getElementById("musicAudio");
         var ended = player.ended;
-        var currentTime = player.currentTime === 0;
-        var isEnd = ended || currentTime;
+        // var currentTime = player.currentTime === 0;
+        // var isEnd = ended || currentTime;
+        // 修改判定歌曲结束的逻辑, 去掉当前播放时间为0的判断
+        var isEnd = ended;
         return isEnd;
     }
 
